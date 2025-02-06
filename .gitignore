@@ -1,0 +1,21 @@
+*.o
+*.so
+*.a
+obj/
+bin/
+
+# Ignora la cartella .vs
+.vs/
+
+# Ignora tutte le cartelle x64 ovunque nel progetto
+x64/
+
+# Ignora i file .users dentro client e engine (corrisponde ai file con estensione .users in tutte le sottodirectory)
+client/**/*.users
+engine/**/*.users
+
+# Ignora tutte le cartelle x64 ovunque nelle cartelle client e engine
+client/**/x64/
+engine/**/x64/
+
+.idea/
