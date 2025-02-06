@@ -5,6 +5,11 @@ This project was developed as part of the Graphics course at SUPSI (Scuola unive
 
 The result is a **chess game simulation**. While the chess logic (rules, turn management, etc.) is not implemented, the focus is on rendering, interaction, and scene management. The project showcases a custom graphics engine capable of handling objects, lights, and interactions with the scene.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2eecb149-a565-433a-b57f-934b5cbfe45c" height="300px">
+  <img src="https://github.com/user-attachments/assets/96370fa3-443d-4eaa-9627-959c98e6b7e3" height="300px">
+</p>
+
 ---
 
 ## 🎨 Features
