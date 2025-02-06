@@ -1,29 +1,34 @@
-# Chessboard Project - SUPSI Graphics Course
+# ♟️ Chessboard Project
 
-## Overview
+## 📝 Overview
 This project was developed as part of the Graphics course at SUPSI (Scuola universitaria professionale della Svizzera italiana). The goal was to design a **graphics engine** using **OpenGL**, **GLM**, and **FreeGLUT**, followed by integrating interactivity within the scene according to the requirements specified by the professor.
 
 The result is a **chess game simulation**. While the chess logic (rules, turn management, etc.) is not implemented, the focus is on rendering, interaction, and scene management. The project showcases a custom graphics engine capable of handling objects, lights, and interactions with the scene.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2eecb149-a565-433a-b57f-934b5cbfe45c" height="300px">
+  <img src="https://github.com/user-attachments/assets/96370fa3-443d-4eaa-9627-959c98e6b7e3" height="300px">
+</p>
+
 ---
 
-## Features
+## 🎨 Features
 
-### Graphics Engine
+### 🖥️ **Custom Graphics Engine**
 - Custom graphics engine built using **OpenGL**, **GLM**, and **FreeGLUT**.
 - Dynamic scene rendering.
 - Support for multiple cameras.
 - Real-time interaction with scene objects.
 - Lighting controls for enhanced realism.
 
-### Chessboard Interaction
+### ♜ **Chessboard Interaction**
 - A 3D chessboard where pieces can be moved interactively.
 - No chess logic, allowing for free placement of pieces.
 - Visual representation of interactions between pieces (e.g., "eating" pieces).
 
 ---
 
-## Controls
+## 🎮 **Controls & Interactions**
 The following controls allow interaction with the chessboard and scene:
 
 - **`C`**: Switch between the available cameras in the scene.
@@ -37,7 +42,7 @@ The following controls allow interaction with the chessboard and scene:
 
 ---
 
-## Requirements
+## 📌 Requirements
 To build and run the project, the following libraries are required:
 
 - **OpenGL**
@@ -49,9 +54,9 @@ Make sure these libraries are installed on your system before compiling the proj
 
 ---
 
-## Building and Running the Project
+## 🔧 Building & Running the Project
 
-### Building
+### 🏗️ **Building**
 1. Navigate to the root directory of the project.
 2. Use the provided `Makefile` to build the project:
    ```bash
@@ -59,7 +64,7 @@ Make sure these libraries are installed on your system before compiling the proj
    ```
 3. The output executable will be located in the project directory (e.g., `x64/Debug/`).
 
-### Running
+### 🚀 Running
 Run the program by providing the path to the scene file (e.g., a `.ovo` file) as an argument:
 ```bash
 ./client.exe /path/to/scene.ovo
@@ -69,10 +74,10 @@ If the project is run using an IDE without specifying a `.ovo` file as a termina
 
 ---
 
-## Authors
-- **Alessandro Cantoni** (C) SUPSI - [alessandro.cantoni@student.supsi.ch](mailto:alessandro.cantoni@student.supsi.ch)
-- **Francesco Fasola** (C) SUPSI - [francesco.fasola@student.supsi.ch](mailto:francesco.fasola@student.supsi.ch)
-- **Mattia Verdolin** (C) SUPSI - [mattia.verdolin@student.supsi.ch](mailto:mattia.verdolin@student.supsi.ch)
+## 👤 Authors
+- **Mattia Verdolin** 📧 [mattia.verdolin@student.supsi.ch](mailto:mattia.verdolin@student.supsi.ch)
+- **Francesco Fasola** 📧 [francesco.fasola@student.supsi.ch](mailto:francesco.fasola@student.supsi.ch)
+- **Alessandro Cantoni** 📧 [alessandro.cantoni@student.supsi.ch](mailto:alessandro.cantoni@student.supsi.ch)
 
 ---
 
