@@ -18,4 +18,7 @@ engine/**/*.users
 client/**/x64/
 engine/**/x64/
 
+# Ma consenti il caricamento delle cartelle x64 dentro engine/dependencies/
+!engine/dependencies/**/x64/
+
 .idea/
