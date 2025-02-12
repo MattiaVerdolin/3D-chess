@@ -34,10 +34,10 @@
 int main(int argc, char* argv[])
 {
 	// Credits:
-	std::cout << "Chessboard - SUPSI Graphics Course Project (a.a. 2024/25)" << std::endl <<
-		"A. Cantoni (C) SUPSI - alessandro.cantoni@student.supsi.ch" << std::endl <<
-		"F. Fasola (C) SUPSI - francesco.fasola@student.supsi.ch" << std::endl <<
-		"M. Verdolin (C) SUPSI - mattia.verdolin@student.supsi.ch" << std::endl << std::endl;
+	std::cout << "Chessboard - SUPSI Graphics Course Project (a.a. 2024/25)" << '\n' <<
+		"A. Cantoni (C) SUPSI - alessandro.cantoni@student.supsi.ch" << '\n' <<
+		"F. Fasola (C) SUPSI - francesco.fasola@student.supsi.ch" << '\n' <<
+		"M. Verdolin (C) SUPSI - mattia.verdolin@student.supsi.ch" << '\n' << '\n';
 
 	std::string scenePath;
 
@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 	// Init engine:
 	eng.init(argc, argv);
 
-	if (eng.load(scenePath.c_str())) { // se caricamento andato a buon fine -> render
+	if (eng.load(scenePath)) { // se caricamento andato a buon fine -> render
 
 		eng.renderScene();
 		gameController.init();
@@ -64,13 +64,13 @@ int main(int argc, char* argv[])
 
 	}
 	else {
-		std::cerr << "Failed to load scene file: " << scenePath << std::endl;
+		std::cerr << "Failed to load scene file: " << scenePath << '\n';
 	}
 
 	// Release engine:
 	eng.free();
 
 	// Done:
-	std::cout << "\n[application terminated]" << std::endl;
+	std::cout << "\n[application terminated]" << '\n';
 	return 0;
 }

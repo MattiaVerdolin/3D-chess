@@ -6,8 +6,14 @@
 #include "iostream"
 #include <FreeImage.h>
 
+float Texture::maxAnisotropy = 1.0f; // Valore di default
 
-Texture::Texture(std::string name) : Object(name) {}
+Texture::Texture(std::string name) : Object(name)
+{
+    if (maxAnisotropy == 1.0f) { // Recupera il valore anisotropy
+        glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT, &maxAnisotropy);
+    }
+}
 
 
 Texture::~Texture() {
@@ -16,7 +22,6 @@ Texture::~Texture() {
 
 
 void Texture::createTexture(std::string path) {
-    // std::cout << "Loading texture from file: " << path << std::endl;
 
     if (texID)
         glDeleteTextures(1, &texID);
@@ -27,20 +32,16 @@ void Texture::createTexture(std::string path) {
 
     FREE_IMAGE_FORMAT format = FreeImage_GetFIFFromFilename(path.c_str());
     if (format == FIF_UNKNOWN) {
-        std::cerr << "Error: FreeImage does not recognize the file format: " << path << std::endl;
+        std::cerr << "Error: FreeImage does not recognize the file format: " << path << '\n';
         return;
     }
-
-    // std::cout << "Format detected by FreeImage: " << FreeImage_GetFormatFromFIF(format) << std::endl;
 
     FIBITMAP* bitmap = FreeImage_Load(FreeImage_GetFileType(path.c_str(), 0), path.c_str());
 
     if (!bitmap) {
-        std::cerr << "Error: Unable to load image from file: " << path << std::endl;
+        std::cerr << "Error: Unable to load image from file: " << path << '\n';
         return;
     }
-
-    // std::cout << "BPP: " << FreeImage_GetBPP(bitmap) << std::endl;
 
     // Flip texture vertically
     FreeImage_FlipVertical(bitmap);
@@ -65,12 +66,14 @@ void Texture::createTexture(std::string path) {
 }
 
 void Texture::render(const glm::mat4& finalMatrix) {
+    glEnable(GL_TEXTURE_2D);
+
     glBindTexture(GL_TEXTURE_2D, texID);
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, 1);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, static_cast<GLint>(maxAnisotropy));
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);

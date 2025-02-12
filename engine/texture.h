@@ -72,4 +72,6 @@ public:
 private:
     unsigned int texID = 0; ///< OpenGL texture ID.
     std::string name; ///< Name of the texture.
+    static float maxAnisotropy; // Variabile statica per il massimo valore anisotropico
+
 };

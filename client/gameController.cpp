@@ -83,7 +83,8 @@ void GameController::handleKeyboardInput(unsigned char key, int mouseX, int mous
 }
 
 
-void GameController::maskShadow() {
+void GameController::maskShadow() const
+{
 
     std::vector<std::string> tempNames;
     tempNames.push_back("Light_Ceiling1");

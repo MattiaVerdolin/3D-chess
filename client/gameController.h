@@ -60,5 +60,5 @@ public:
      */
     void init();
 
-    void maskShadow();
+    void maskShadow() const;
 };

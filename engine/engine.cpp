@@ -158,7 +158,6 @@ bool MVsio::initOpenGL()
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_LIGHTING);
     glEnable(GL_NORMALIZE);
-    glEnable(GL_TEXTURE_2D);
     glEnable(GL_CULL_FACE);
 
     glViewport(0, 0, 800, 600);
@@ -177,7 +176,7 @@ bool MVsio::initFreeGlut(int argc, char* argv[])
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
     glutInitWindowSize(800, 600);
     glutInitWindowPosition(100, 100);
-    windowId = glutCreateWindow("FreeGLUT Example - Engine Window");
+    windowId = glutCreateWindow("3D Chess");
     glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 
     return true;

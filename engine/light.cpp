@@ -15,8 +15,14 @@ Light::Light(int id, const std::string& name, Node* parent, glm::mat4 localMatri
     setAttenuation(1.0f, 0.0f, 0.0f);
     setIntensity(intensity);
 
-    this->lightNumber = GL_LIGHT0 + id;
-    glEnable(lightNumber);
+    if (id < 7) { //id allowed from 0 to 6
+        this->lightNumber = GL_LIGHT0 + id;
+        glEnable(lightNumber);
+    }
+	else
+    {
+	    std::cout << "number of lights higher than 7 \n";
+    }
 }
 
 
